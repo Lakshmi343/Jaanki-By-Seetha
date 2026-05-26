@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaWhatsapp, FaPinterest, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
 import LuxuryButton from './LuxuryButton';
-import logo from '../assets/logo.jpeg';
+import logo from '../assets/logo.png';
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -58,19 +58,16 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Brand Legacy column */}
         <div className="space-y-6">
-          <Link to="/" className="flex items-center gap-3 group">
-            <img 
-              src={logo} 
-              alt="Janki by Seetha Logo" 
-              className="h-12 w-12 rounded-full object-cover border border-brand-gold/30 shadow-md group-hover:border-brand-gold transition-all duration-300"
-            />
-            <div className="flex flex-col text-left leading-tight">
-              <span className="font-cinzel text-xl font-bold tracking-[0.12em] text-brand-gold uppercase">
-                Janki
-              </span>
-              <span className="font-signature text-2xl text-brand-gold/70 lowercase relative -top-1.5">
-                by seetha
-              </span>
+          <Link to="/" className="group block" aria-label="Janki by Seetha Home">
+            {/* Aspect-Ratio-Locked Premium Rectangular Logo Container */}
+            <div className="relative w-32 h-14 rounded-md p-1 bg-brand-maroon border border-brand-gold/35 shadow-lg group-hover:border-brand-gold transition-all duration-500 overflow-hidden shrink-0 flex items-center justify-center">
+              <img 
+                src={logo} 
+                alt="Janki by Seetha Logo" 
+                className="h-full w-full object-contain rounded-sm" 
+              />
+              {/* Subtle hover overlay effect */}
+              <div className="absolute inset-0 bg-brand-maroon/0 group-hover:bg-brand-maroon/5 transition-colors duration-500 rounded-md" />
             </div>
           </Link>
           <p className="font-sans text-xs md:text-sm text-brand-ivory/70 leading-relaxed">

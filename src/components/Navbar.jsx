@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { ShopContext } from '../context/ShopContext';
 import { FaHeart, FaShoppingBag, FaUser, FaBars, FaTimes, FaMinus, FaPlus, FaTrash, FaSearch } from 'react-icons/fa';
 import LuxuryButton from './LuxuryButton';
-import logo from '../assets/logo.jpeg';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const { 
@@ -62,20 +62,17 @@ const Navbar = () => {
             </button>
 
             {/* Luxury Signature Branding */}
-            <div className="shrink-0">
-              <Link to="/" className="flex items-center gap-1 md:gap-3 group">
-                <img 
-                  src={logo} 
-                  alt="Janki by Seetha Logo" 
-                  className="h-8 w-8 xs:h-9 xs:w-9 md:h-12 md:w-12 rounded-full object-cover border border-brand-gold/30 shadow-md group-hover:border-brand-gold transition-all duration-300"
-                />
-                <div className="flex flex-col text-left leading-none">
-                  <span className="font-cinzel text-xs xs:text-sm md:text-xl font-bold tracking-[0.1em] text-brand-maroon uppercase group-hover:text-brand-gold transition-colors duration-300">
-                    Janki
-                  </span>
-                  <span className="font-signature text-sm xs:text-base md:text-2xl text-brand-gold lowercase relative -top-0.5 md:-top-1.5">
-                    by seetha
-                  </span>
+            <div className="shrink-0 flex items-center">
+              <Link to="/" className="group block animate-fade-in" aria-label="Janki by Seetha Home">
+                {/* Aspect-Ratio-Locked Premium Rectangular Logo Container */}
+                <div className="relative w-24 h-10 xs:w-28 xs:h-12 md:w-36 md:h-16 rounded-md p-1 bg-brand-maroon border border-brand-gold/35 shadow-lg group-hover:border-brand-gold transition-all duration-500 overflow-hidden shrink-0 flex items-center justify-center">
+                  <img 
+                    src={logo} 
+                    alt="Janki by Seetha Logo" 
+                    className="h-full w-full object-contain rounded-sm" 
+                  />
+                  {/* Subtle hover overlay effect */}
+                  <div className="absolute inset-0 bg-brand-maroon/0 group-hover:bg-brand-maroon/5 transition-colors duration-500 rounded-md" />
                 </div>
               </Link>
             </div>

@@ -25,9 +25,15 @@ const Home = () => {
 
   return (
     <div className="bg-brand-ivory min-h-screen relative overflow-hidden pb-12">
-      
+      {/* Background Soft Glows */}
+      <div className="absolute top-1/4 left-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-brand-gold/5 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none -translate-x-1/2 z-0"></div>
+      <div className="absolute top-2/4 right-0 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-brand-maroon/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none translate-x-1/2 z-0"></div>
+      <div className="absolute bottom-1/4 left-10 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-brand-gold/5 rounded-full blur-[80px] sm:blur-[100px] pointer-events-none z-0"></div>
+
       {/* Cinematic Hero Header Slider */}
-      <HeroSlider />
+      <div className="relative z-10">
+        <HeroSlider />
+      </div>
 
       {/* Brand Heritage Story Banner */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 bg-white relative border-b border-brand-gold/15">

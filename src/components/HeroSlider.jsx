@@ -91,7 +91,7 @@ const HeroSlider = () => {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="font-signature text-2xl xs:text-3xl md:text-5xl text-brand-gold block font-medium"
+                  className="font-signature text-[clamp(1.5rem,4vw,3rem)] text-brand-gold block font-medium"
                 >
                   {slide.signature}
                 </motion.span>
@@ -101,25 +101,29 @@ const HeroSlider = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 0.4 }}
-                  className="font-cinzel text-2xl xs:text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold tracking-wider text-brand-ivory leading-tight uppercase"
+                  className="font-cinzel text-[clamp(1.35rem,5.5vw,4.25rem)] font-semibold tracking-wider text-brand-ivory leading-tight uppercase"
                 >
                   {slide.title}
                 </motion.h1>
 
-                {/* Gold Accent Spacer */}
+                {/* Pulsing Diamond Divider */}
                 <motion.div 
-                  initial={{ width: 0 }}
-                  animate={{ width: 80 }}
+                  initial={{ opacity: 0, width: 0 }}
+                  animate={{ opacity: 1, width: '100%' }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  className="h-[2px] bg-brand-gold mx-auto"
-                />
+                  className="relative flex items-center justify-center w-36 xs:w-44 md:w-52 mx-auto py-1"
+                >
+                  <div className="h-[1px] bg-brand-gold/50 flex-grow"></div>
+                  <div className="mx-2 w-1.5 h-1.5 rotate-45 bg-brand-gold animate-gold-pulse flex-shrink-0"></div>
+                  <div className="h-[1px] bg-brand-gold/50 flex-grow"></div>
+                </motion.div>
 
                 {/* Subtitle */}
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
-                  className="font-sans text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg text-brand-ivory/80 font-light tracking-wide max-w-xl mx-auto leading-relaxed"
+                  className="font-sans text-[clamp(0.65rem,1.2vw+0.4rem,1rem)] text-brand-ivory/80 font-light tracking-wide max-w-xl mx-auto leading-relaxed"
                 >
                   {slide.subtitle}
                 </motion.p>

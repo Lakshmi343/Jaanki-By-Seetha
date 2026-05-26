@@ -17,7 +17,7 @@ const ReelCard = ({ reel }) => {
       href={reel.instagramUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block aspect-[9/16] w-full bg-brand-maroon overflow-hidden border border-brand-gold/20 hover:border-brand-gold duration-500 transition-all gold-shadow hover:shadow-[0_0_25px_rgba(212,175,55,0.35)]"
+      className="group relative block aspect-[9/16] w-full bg-brand-maroon overflow-hidden border border-brand-gold/20 hover:border-brand-gold transition-all duration-700 gold-shadow hover:shadow-[0_20px_50px_rgba(212,175,55,0.45)] transform hover:-translate-y-1"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

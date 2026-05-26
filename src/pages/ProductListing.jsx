@@ -87,11 +87,11 @@ const ProductListing = () => {
 
   return (
     <div className="bg-brand-ivory min-h-screen py-12 sm:py-16 md:py-20 px-3 xs:px-4 md:px-12 relative overflow-hidden">
-      
-      {/* Decorative Gold Glow elements */}
-      <div className="absolute top-24 right-12 w-80 h-80 bg-brand-gold/5 rounded-full blur-[80px] pointer-events-none"></div>
+      {/* Background Soft Glows */}
+      <div className="absolute top-24 left-0 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-brand-gold/5 rounded-full blur-[80px] sm:blur-[120px] pointer-events-none -translate-x-1/2 z-0"></div>
+      <div className="absolute top-96 right-0 w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] bg-brand-maroon/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none translate-x-1/2 z-0"></div>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* Page Headings */}
         <AnimatedWrapper>

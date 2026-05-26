@@ -34,7 +34,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div 
-      className="group relative flex flex-col bg-white border border-brand-gold/15 hover:border-brand-gold duration-500 transition-all gold-shadow hover:shadow-[0_0_20px_rgba(212,175,55,0.25)] h-full"
+      className="group relative flex flex-col bg-white border border-brand-gold/15 hover:border-brand-gold transition-all duration-700 gold-shadow hover:shadow-[0_20px_50px_rgba(212,175,55,0.35)] transform hover:-translate-y-1 h-full"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >

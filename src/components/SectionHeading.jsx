@@ -9,13 +9,16 @@ const SectionHeading = ({ title, subtitle, signature, centered = true }) => {
           {signature}
         </span>
       )}
-      <h2 className="font-cinzel text-3xl md:text-4xl text-brand-maroon tracking-wider font-semibold relative inline-block pb-3 uppercase">
+      <h2 className="font-cinzel text-xl xs:text-2xl sm:text-3xl md:text-4xl text-brand-maroon tracking-wider font-semibold relative inline-block pb-4 uppercase">
         {title}
-        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-[2px] bg-brand-gold"></span>
-        <span className="absolute bottom-[-4px] left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-brand-maroon border border-brand-gold"></span>
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center justify-center w-32 xs:w-40 sm:w-48">
+          <div className="h-[1px] bg-brand-gold/45 flex-grow"></div>
+          <div className="mx-2 w-2.5 h-2.5 rotate-45 border border-brand-gold bg-brand-maroon flex-shrink-0 shadow-sm animate-pulse-slow"></div>
+          <div className="h-[1px] bg-brand-gold/45 flex-grow"></div>
+        </div>
       </h2>
       {subtitle && (
-        <p className="mt-4 text-brand-maroon/70 font-sans tracking-wide text-sm md:text-base max-w-xl mx-auto">
+        <p className="mt-5 text-brand-maroon/70 font-sans tracking-wide text-xs sm:text-sm md:text-base max-w-xl mx-auto leading-relaxed">
           {subtitle}
         </p>
       )}

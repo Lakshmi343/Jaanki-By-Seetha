@@ -5,9 +5,9 @@ const CategoryCard = ({ category }) => {
   return (
     <Link 
       to={`/shop?category=${category.id}`} 
-      className="group relative h-96 w-full block overflow-hidden border border-brand-gold/30 hover:border-brand-gold transition-colors duration-500 gold-shadow"
+      className="group relative h-96 w-full block overflow-hidden border border-brand-gold/30 hover:border-brand-gold transition-all duration-700 gold-shadow hover:shadow-[0_20px_50px_rgba(212,175,55,0.4)] transform hover:-translate-y-1"
     >
-      {/* Background Image with Slow Zoom on Active Hover */}
+    
       <img
         src={category.image}
         alt={category.name}
