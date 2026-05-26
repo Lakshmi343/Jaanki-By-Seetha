@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-brand-maroon: #3b0d14;
+  --color-brand-maroon-light: #521820;
+  --color-brand-maroon-dark: #26070b;
+  --color-brand-gold: #d4af37;
+  --color-brand-gold-light: #f3d070;
+  --color-brand-gold-dark: #aa8620;
+  --color-brand-ivory: #faf9f6;
+  --color-brand-beige: #f4ecd8;
+  --color-brand-cream: #fffdf9;
+  
+  --font-serif: "Playfair Display", "Cinzel", Georgia, serif;
+  --font-cinzel: "Cinzel", Georgia, serif;
+  --font-signature: "Great Vibes", cursive;
+  --font-sans: "Inter", system-ui, sans-serif;
+  
+  --animate-gold-pulse: gold-pulse 3s infinite ease-in-out;
+  --animate-lamp-glow: lamp-glow 6s infinite ease-in-out;
+  --animate-float-slow: float-slow 8s infinite ease-in-out;
+}
+
+@keyframes gold-pulse {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.1), inset 0 0 10px rgba(212, 175, 55, 0.05);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.6), 0 0 20px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.35), inset 0 0 15px rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.8);
+  }
+}
+
+@keyframes lamp-glow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6)) drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8)) drop-shadow(0 0 30px rgba(212, 175, 55, 0.5));
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+/* Custom premium styles */
+body {
+  background-color: #faf9f6; /* Ivory cream */
+  color: #3b0d14; /* Deep maroon */
+  font-family: "Inter", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #faf9f6;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b0d14;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Glassmorphism Classes */
+.glass-light {
+  background: rgba(250, 249, 246, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-dark {
+  background: rgba(59, 13, 20, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+/* Elegant Golden Borders */
+.gold-border {
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  position: relative;
+}
+.gold-border::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  pointer-events: none;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #3b0d14 0%, #26070b 100%);
+  position: relative;
+}
+
+/* Custom glow classes */
+.gold-shadow {
+  box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.3);
+}
+
+.gold-glow-hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gold-glow-hover:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.45);
+  border-color: #d4af37;
+  transform: translateY(-2px);
+}
+
+/* Kerala Border Patterns */
+.kerala-pattern {
+  background-image: radial-gradient(circle at 100% 150%, transparent 24%, #faf9f6 24%, #faf9f6 28%, transparent 28%, transparent),
+                    radial-gradient(circle at 0% 150%, transparent 24%, #faf9f6 24%, #faf9f6 28%, transparent 28%, transparent);
+  background-size: 20px 20px;
+}
