@@ -64,7 +64,7 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="bg-brand-ivory min-h-screen py-16 px-4 md:px-12 relative overflow-hidden">
+    <div className="bg-brand-ivory min-h-screen py-12 sm:py-16 md:py-20 px-3 xs:px-4 md:px-12 relative overflow-hidden">
       
       {/* Decorative Ornaments */}
       <div className="absolute top-20 right-10 w-96 h-96 bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
@@ -72,7 +72,7 @@ const ProductDetails = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* Detail Canvas Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start relative z-10">
           
           {/* LEFT: Cinematic Gallery */}
           <div className="space-y-4">
@@ -385,7 +385,7 @@ const ProductDetails = () => {
               />
             </AnimatedWrapper>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 relative z-10">
+            <div className="grid grid-cols-1 min-[370px]:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-8 md:mt-12 relative z-10">
               {similarProducts.map((p, idx) => (
                 <AnimatedWrapper key={p.id} delay={0.2 * idx}>
                   <ProductCard product={p} />

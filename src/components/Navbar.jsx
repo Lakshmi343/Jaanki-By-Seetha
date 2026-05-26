@@ -42,130 +42,133 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Top Banner Alert Bar */}
-      <div className="bg-brand-maroon text-brand-gold text-[10px] md:text-xs tracking-[0.2em] uppercase py-2 text-center border-b border-brand-gold/30">
-        Complimentary International Delivery Above ₹15,000 | Festive Season Order Dispatch in 5 Days
-      </div>
-
-      {/* Primary Header Navbar */}
-      <header className="sticky top-0 z-40 w-full glass-light border-b border-brand-gold/15">
-        <div className="max-w-7xl mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
-          
-          {/* Mobile Menu Icon */}
-          <button 
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-brand-maroon hover:text-brand-gold transition-colors p-2"
-          >
-            {isMobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
-          </button>
-
-          {/* Luxury Signature Branding */}
-          <div className="flex-1 md:flex-initial text-center md:text-left">
-            <Link to="/" className="flex items-center justify-center md:justify-start gap-3 group">
-              <img 
-                src={logo} 
-                alt="Janki by Seetha Logo" 
-                className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border border-brand-gold/30 shadow-md group-hover:border-brand-gold transition-all duration-300"
-              />
-              <div className="flex flex-col text-left leading-tight">
-                <span className="font-cinzel text-lg md:text-xl font-bold tracking-[0.12em] text-brand-maroon uppercase group-hover:text-brand-gold transition-colors duration-300">
-                  Janki
-                </span>
-                <span className="font-signature text-xl md:text-2xl text-brand-gold lowercase relative -top-1.5">
-                  by seetha
-                </span>
-              </div>
-            </Link>
-          </div>
-
-          {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) => 
-                  `font-cinzel text-xs md:text-sm tracking-widest uppercase transition-all duration-300 relative py-1 hover:text-brand-gold ${
-                    isActive 
-                      ? 'text-brand-gold font-semibold after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-brand-gold' 
-                      : 'text-brand-maroon/80'
-                  }`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
-          </nav>
-
-          {/* Action Icons Panel */}
-          <div className="flex items-center space-x-4 md:space-x-6">
-            
-            {/* Search Trigger */}
-            <button 
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="text-brand-maroon hover:text-brand-gold transition-colors p-2"
-              title="Search Catalog"
-            >
-              <FaSearch size={16} />
-            </button>
-
-            {/* Customer Profile Icon */}
-            <Link 
-              to="/dashboard" 
-              className="text-brand-maroon hover:text-brand-gold transition-colors p-2 hidden sm:inline-block"
-              title="Customer Account"
-            >
-              <FaUser size={16} />
-            </Link>
-
-            {/* Wishlist Link */}
-            <Link 
-              to="/dashboard?tab=wishlist" 
-              className="text-brand-maroon hover:text-brand-gold transition-colors p-2 relative"
-              title="Saved Pieces"
-            >
-              <FaHeart size={16} />
-              {wishlist.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-brand-gold text-brand-maroon text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-brand-ivory font-sans shadow-md">
-                  {wishlist.length}
-                </span>
-              )}
-            </Link>
-
-            {/* Cart Trigger */}
-            <button 
-              onClick={() => setIsCartOpen(true)}
-              className="text-brand-maroon hover:text-brand-gold transition-colors p-2 relative"
-              title="Cart Summary"
-            >
-              <FaShoppingBag size={16} />
-              {getCartCount() > 0 && (
-                <span className="absolute -top-1 -right-1 bg-brand-maroon text-brand-gold text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-brand-gold/30 font-sans shadow-md">
-                  {getCartCount()}
-                </span>
-              )}
-            </button>
-          </div>
+      <header className="fixed top-0 left-0 w-full z-40 flex flex-col">
+        {/* Top Banner Alert Bar */}
+        <div className="bg-brand-maroon text-brand-gold text-[9px] xs:text-[10px] md:text-xs tracking-[0.1em] xs:tracking-[0.2em] uppercase py-2 px-2 text-center border-b border-brand-gold/30 w-full leading-tight">
+          Complimentary International Delivery Above ₹15,000 | Festive Season Order Dispatch in 5 Days
         </div>
 
-        {/* Dynamic Search Modal Dropdown */}
-        {isSearchOpen && (
-          <div className="bg-brand-ivory border-b border-brand-gold/25 w-full py-4 px-6 absolute top-20 left-0 shadow-lg animate-fade-in">
-            <form onSubmit={handleSearchSubmit} className="max-w-xl mx-auto flex items-center border border-brand-gold/40 bg-white px-3 py-1">
-              <input
-                type="text"
-                placeholder="Search Sarees, Bridal sets, Kurtis..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-transparent border-none outline-none py-2 text-brand-maroon text-sm font-sans"
-                autoFocus
-              />
-              <button type="submit" className="text-brand-maroon hover:text-brand-gold p-2">
-                <FaSearch size={16} />
+        {/* Primary Header Navbar */}
+        <div className="w-full glass-light border-b border-brand-gold/15 relative">
+          <div className="max-w-7xl mx-auto px-2 xs:px-4 md:px-8 h-16 md:h-20 flex items-center justify-between gap-1 xs:gap-2">
+            
+            {/* Mobile Menu Icon */}
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden text-brand-maroon hover:text-brand-gold transition-colors p-1.5 xs:p-2 shrink-0 animate-fade-in"
+              aria-label="Toggle Menu"
+            >
+              {isMobileMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+            </button>
+
+            {/* Luxury Signature Branding */}
+            <div className="shrink-0">
+              <Link to="/" className="flex items-center gap-1 md:gap-3 group">
+                <img 
+                  src={logo} 
+                  alt="Janki by Seetha Logo" 
+                  className="h-8 w-8 xs:h-9 xs:w-9 md:h-12 md:w-12 rounded-full object-cover border border-brand-gold/30 shadow-md group-hover:border-brand-gold transition-all duration-300"
+                />
+                <div className="flex flex-col text-left leading-none">
+                  <span className="font-cinzel text-xs xs:text-sm md:text-xl font-bold tracking-[0.1em] text-brand-maroon uppercase group-hover:text-brand-gold transition-colors duration-300">
+                    Janki
+                  </span>
+                  <span className="font-signature text-sm xs:text-base md:text-2xl text-brand-gold lowercase relative -top-0.5 md:-top-1.5">
+                    by seetha
+                  </span>
+                </div>
+              </Link>
+            </div>
+
+            {/* Desktop Navigation Links */}
+            <nav className="hidden md:flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <NavLink
+                  key={link.path}
+                  to={link.path}
+                  className={({ isActive }) => 
+                    `font-cinzel text-xs md:text-sm tracking-widest uppercase transition-all duration-300 relative py-1 hover:text-brand-gold ${
+                      isActive 
+                        ? 'text-brand-gold font-semibold after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-brand-gold' 
+                        : 'text-brand-maroon/80'
+                    }`
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              ))}
+            </nav>
+
+            {/* Action Icons Panel */}
+            <div className="flex items-center space-x-0.5 xs:space-x-2 md:space-x-6 shrink-0">
+              
+              {/* Search Trigger */}
+              <button 
+                onClick={() => setIsSearchOpen(!isSearchOpen)}
+                className="text-brand-maroon hover:text-brand-gold transition-colors p-1.5 xs:p-2"
+                title="Search Catalog"
+              >
+                <FaSearch size={18} />
               </button>
-            </form>
+
+              {/* Customer Profile Icon */}
+              <Link 
+                to="/dashboard" 
+                className="text-brand-maroon hover:text-brand-gold transition-colors p-1.5 xs:p-2 hidden sm:inline-block"
+                title="Customer Account"
+              >
+                <FaUser size={18} />
+              </Link>
+
+              {/* Wishlist Link */}
+              <Link 
+                to="/dashboard?tab=wishlist" 
+                className="text-brand-maroon hover:text-brand-gold transition-colors p-1.5 xs:p-2 relative"
+                title="Saved Pieces"
+              >
+                <FaHeart size={18} />
+                {wishlist.length > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-brand-gold text-brand-maroon text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-brand-ivory font-sans shadow-md">
+                    {wishlist.length}
+                  </span>
+                )}
+              </Link>
+
+              {/* Cart Trigger */}
+              <button 
+                onClick={() => setIsCartOpen(true)}
+                className="text-brand-maroon hover:text-brand-gold transition-colors p-1.5 xs:p-2 relative"
+                title="Cart Summary"
+              >
+                <FaShoppingBag size={18} />
+                {getCartCount() > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-brand-maroon text-brand-gold text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center border border-brand-gold/30 font-sans shadow-md">
+                    {getCartCount()}
+                  </span>
+                )}
+              </button>
+            </div>
           </div>
-        )}
+
+          {/* Dynamic Search Modal Dropdown */}
+          {isSearchOpen && (
+            <div className="bg-brand-ivory border-b border-brand-gold/25 w-full py-4 px-6 absolute top-full left-0 shadow-lg animate-fade-in z-50">
+              <form onSubmit={handleSearchSubmit} className="max-w-xl mx-auto flex items-center border border-brand-gold/40 bg-white px-3 py-1">
+                <input
+                  type="text"
+                  placeholder="Search Sarees, Bridal sets, Kurtis..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full bg-transparent border-none outline-none py-2 text-brand-maroon text-sm font-sans"
+                  autoFocus
+                />
+                <button type="submit" className="text-brand-maroon hover:text-brand-gold p-2">
+                  <FaSearch size={18} />
+                </button>
+              </form>
+            </div>
+          )}
+        </div>
       </header>
 
       {/* Mobile Menu Panel Drawer */}

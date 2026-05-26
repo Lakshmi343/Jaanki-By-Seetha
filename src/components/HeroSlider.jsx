@@ -42,12 +42,12 @@ const HeroSlider = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative w-full h-[85vh] md:h-screen bg-brand-maroon-dark overflow-hidden">
+    <div className="relative w-full h-[80vh] xs:h-[85vh] md:h-screen bg-brand-maroon-dark overflow-hidden">
       {/* Absolute floating bottom details */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center pointer-events-none">
+      <div className="hidden sm:flex absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex-col items-center pointer-events-none">
         {/* Floating lamp icon / glowing dot */}
         <div className="w-2.5 h-2.5 rounded-full bg-brand-gold animate-lamp-glow mb-2"></div>
-        <span className="font-cinzel text-[9px] md:text-xs tracking-[0.25em] text-brand-gold uppercase">
+        <span className="font-cinzel text-xs tracking-[0.25em] text-brand-gold uppercase">
           Slide to Explore Heritage
         </span>
       </div>
@@ -83,15 +83,15 @@ const HeroSlider = () => {
             </div>
 
             {/* Custom Overlay Grid */}
-            <div className="absolute inset-0 flex items-center justify-center text-center px-4 md:px-12 z-10">
-              <div className="max-w-4xl mx-auto space-y-6">
+            <div className="absolute inset-0 flex items-center justify-center text-center px-4 sm:px-6 md:px-12 z-10">
+              <div className="max-w-4xl mx-auto space-y-3 sm:space-y-4 md:space-y-6">
                 
                 {/* Signature Brand Script */}
                 <motion.span
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="font-signature text-3xl md:text-5xl text-brand-gold block font-medium"
+                  className="font-signature text-2xl xs:text-3xl md:text-5xl text-brand-gold block font-medium"
                 >
                   {slide.signature}
                 </motion.span>
@@ -101,7 +101,7 @@ const HeroSlider = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1, delay: 0.4 }}
-                  className="font-cinzel text-3xl md:text-7xl font-semibold tracking-wider text-brand-ivory leading-tight uppercase"
+                  className="font-cinzel text-2xl xs:text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold tracking-wider text-brand-ivory leading-tight uppercase"
                 >
                   {slide.title}
                 </motion.h1>
@@ -109,7 +109,7 @@ const HeroSlider = () => {
                 {/* Gold Accent Spacer */}
                 <motion.div 
                   initial={{ width: 0 }}
-                  animate={{ width: 120 }}
+                  animate={{ width: 80 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                   className="h-[2px] bg-brand-gold mx-auto"
                 />
@@ -119,7 +119,7 @@ const HeroSlider = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
-                  className="font-sans text-xs md:text-lg text-brand-ivory/80 font-light tracking-wide max-w-xl mx-auto leading-relaxed"
+                  className="font-sans text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg text-brand-ivory/80 font-light tracking-wide max-w-xl mx-auto leading-relaxed"
                 >
                   {slide.subtitle}
                 </motion.p>
@@ -129,17 +129,19 @@ const HeroSlider = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 1 }}
-                  className="pt-6 flex flex-wrap justify-center gap-4"
+                  className="pt-3 sm:pt-4 md:pt-6 flex flex-wrap justify-center gap-2 xs:gap-3 md:gap-4"
                 >
                   <LuxuryButton 
                     variant="primary" 
                     onClick={() => navigate(`/shop?category=${slide.categoryLink}`)}
+                    className="px-4 py-2 text-[10px] xs:px-6 xs:py-3 xs:text-xs md:px-8 md:py-3.5 md:text-sm"
                   >
                     {slide.ctaText}
                   </LuxuryButton>
                   <LuxuryButton 
                     variant="outline" 
                     onClick={() => navigate('/contact')}
+                    className="px-4 py-2 text-[10px] xs:px-6 xs:py-3 xs:text-xs md:px-8 md:py-3.5 md:text-sm"
                   >
                     Book Consultation
                   </LuxuryButton>
@@ -161,7 +163,12 @@ const HeroSlider = () => {
       {/* Styled Swiper Bullets */}
       <style>{`
         .swiper-pagination {
-          bottom: 2rem !important;
+          bottom: 1rem !important;
+        }
+        @media (min-width: 640px) {
+          .swiper-pagination {
+            bottom: 2rem !important;
+          }
         }
         .custom-bullet {
           width: 8px;

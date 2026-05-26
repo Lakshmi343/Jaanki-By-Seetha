@@ -7,7 +7,7 @@ import { FaInstagram, FaFilm } from 'react-icons/fa';
 
 const Reels = () => {
   return (
-    <div className="bg-brand-ivory min-h-screen py-16 px-4 md:px-12 relative overflow-hidden">
+    <div className="bg-brand-ivory min-h-screen py-12 sm:py-16 md:py-20 px-3 xs:px-4 md:px-12 relative overflow-hidden">
       
       {/* Background soft glows */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
@@ -25,14 +25,14 @@ const Reels = () => {
         </AnimatedWrapper>
 
         {/* Video Reels Grid Feed */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 xs:gap-4 md:gap-6 mt-10 md:mt-16 relative z-10">
           {reels.map((reel, idx) => (
             <AnimatedWrapper key={reel.id} delay={0.1 * idx}>
               <div className="relative group">
                 <ReelCard reel={reel} />
                 
                 {/* Decorative border tags under the card */}
-                <div className="bg-white border-t border-brand-gold/20 p-4 border-l border-r border-b border-brand-gold/15 shadow-sm">
+                <div className="bg-white border-t border-brand-gold/20 p-3 md:p-4 border-l border-r border-b border-brand-gold/15 shadow-sm">
                   <div className="flex justify-between items-center text-[9px] tracking-widest font-cinzel font-bold text-brand-maroon">
                     <span className="flex items-center gap-1">
                       <FaFilm className="text-brand-gold" />

@@ -27,8 +27,8 @@ const CategoryCard = ({ category }) => {
       <div className="absolute bottom-4 right-4 w-2 h-2 border-b border-r border-brand-gold/40"></div>
 
       {/* Category Text & Badges */}
-      <div className="absolute bottom-8 left-8 right-8 text-center md:text-left">
-        <h3 className="font-cinzel text-xl md:text-2xl text-brand-gold tracking-widest uppercase font-semibold">
+      <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 text-center md:text-left">
+        <h3 className="font-cinzel text-lg xs:text-xl md:text-2xl text-brand-gold tracking-widest uppercase font-semibold">
           {category.name}
         </h3>
         
@@ -40,7 +40,7 @@ const CategoryCard = ({ category }) => {
         </p>
 
         {/* Glassmorphic "Explore Collection" button overlay */}
-        <div className="mt-4 inline-block px-4 py-2 glass-light text-brand-maroon font-cinzel text-[10px] tracking-widest uppercase font-bold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 border border-brand-gold/30">
+        <div className="mt-4 inline-block px-4 py-2 glass-light text-brand-maroon font-cinzel text-[10px] tracking-widest uppercase font-bold opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 transition-all duration-500 border border-brand-gold/30">
           Explore Collection
         </div>
       </div>

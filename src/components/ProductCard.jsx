@@ -98,20 +98,20 @@ const ProductCard = ({ product }) => {
         )}
 
         {/* Glassmorphic Sliding Drawer with Quick Checkout Actions */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-brand-maroon/90 to-brand-maroon/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10 flex gap-2">
+        <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 bg-gradient-to-t from-brand-maroon/90 to-brand-maroon/20 translate-y-0 md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-500 z-10 flex gap-2">
           <button
             onClick={handleAddToCart}
-            className="flex-1 py-2.5 bg-brand-gold hover:bg-brand-maroon text-brand-maroon hover:text-brand-gold text-[10px] md:text-xs font-cinzel tracking-widest font-bold border border-brand-maroon hover:border-brand-gold transition-all duration-300 uppercase active:scale-95 shadow-lg"
+            className="flex-1 py-2 bg-brand-gold hover:bg-brand-maroon text-brand-maroon hover:text-brand-gold text-[10px] md:text-xs font-cinzel tracking-widest font-bold border border-brand-maroon hover:border-brand-gold transition-all duration-300 uppercase active:scale-95 shadow-lg cursor-pointer"
           >
             Add to Bag
           </button>
           
           <button
             onClick={handleWhatsAppInquiry}
-            className="px-3 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white text-[10px] md:text-xs transition-all duration-300 flex items-center justify-center border border-white/10 active:scale-95 shadow-lg"
+            className="px-2.5 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-[10px] md:text-xs transition-all duration-300 flex items-center justify-center border border-white/10 active:scale-95 shadow-lg cursor-pointer"
             title="Inquire via WhatsApp"
           >
-            <FaWhatsapp size={16} />
+            <FaWhatsapp size={15} />
           </button>
         </div>
       </Link>

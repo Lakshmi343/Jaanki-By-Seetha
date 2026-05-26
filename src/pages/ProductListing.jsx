@@ -86,7 +86,7 @@ const ProductListing = () => {
   });
 
   return (
-    <div className="bg-brand-ivory min-h-screen py-16 px-4 md:px-12 relative overflow-hidden">
+    <div className="bg-brand-ivory min-h-screen py-12 sm:py-16 md:py-20 px-3 xs:px-4 md:px-12 relative overflow-hidden">
       
       {/* Decorative Gold Glow elements */}
       <div className="absolute top-24 right-12 w-80 h-80 bg-brand-gold/5 rounded-full blur-[80px] pointer-events-none"></div>
@@ -103,7 +103,7 @@ const ProductListing = () => {
         </AnimatedWrapper>
 
         {/* Mobile Filter Toggles */}
-        <div className="flex lg:hidden justify-between items-center bg-white border border-brand-gold/20 p-4 mb-6 shadow-sm">
+        <div className="flex lg:hidden justify-between items-center bg-white border border-brand-gold/20 p-3 xs:p-4 mb-4 xs:mb-6 shadow-sm">
           <button 
             onClick={() => setIsMobileFilterOpen(true)}
             className="flex items-center gap-2 font-cinzel text-xs tracking-widest text-brand-maroon uppercase font-bold"
@@ -112,7 +112,7 @@ const ProductListing = () => {
             <span>Refine Search</span>
           </button>
           
-          <div className="flex items-center gap-2 border-l border-brand-gold/20 pl-4">
+          <div className="flex items-center gap-2 border-l border-brand-gold/20 pl-3 xs:pl-4">
             <span className="font-cinzel text-[10px] tracking-widest uppercase text-brand-maroon/60">Sort By</span>
             <select
               value={sortBy}
@@ -298,7 +298,7 @@ const ProductListing = () => {
               </div>
             ) : (
               // Items grid
-              <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8">
+              <div className="grid grid-cols-1 min-[370px]:grid-cols-2 xl:grid-cols-3 gap-3 xs:gap-4 md:gap-8">
                 {filteredProducts.map((prod, idx) => (
                   <AnimatedWrapper key={prod.id} delay={(idx % 3) * 0.1} y={20}>
                     <ProductCard product={prod} />

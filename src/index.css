@@ -58,11 +58,16 @@
 }
 
 /* Custom premium styles */
-body {
+html, body {
   background-color: #faf9f6; /* Ivory cream */
   color: #3b0d14; /* Deep maroon */
   font-family: "Inter", system-ui, sans-serif;
   overflow-x: hidden;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
 }
 
 /* Custom Scrollbar */

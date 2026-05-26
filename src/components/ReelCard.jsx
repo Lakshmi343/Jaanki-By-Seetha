@@ -54,7 +54,7 @@ const ReelCard = ({ reel }) => {
       {reel.productId && (
         <button
           onClick={handleProductCheckout}
-          className="absolute bottom-16 left-5 right-5 z-20 py-2 bg-brand-ivory/90 hover:bg-brand-maroon text-brand-maroon hover:text-brand-gold text-[9px] font-cinzel tracking-widest font-bold border border-brand-gold/30 transition-all duration-300 uppercase opacity-0 group-hover:opacity-100 flex items-center justify-center gap-1.5 shadow-xl"
+          className="absolute bottom-16 left-3 right-3 xs:left-5 xs:right-5 z-20 py-2 bg-brand-ivory/95 hover:bg-brand-maroon text-brand-maroon hover:text-brand-gold text-[9px] font-cinzel tracking-widest font-bold border border-brand-gold/30 transition-all duration-300 uppercase opacity-100 md:opacity-0 md:group-hover:opacity-100 flex items-center justify-center gap-1.5 shadow-xl cursor-pointer"
         >
           <FaShoppingBag size={10} />
           <span>Shop This Look</span>

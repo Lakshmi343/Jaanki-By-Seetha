@@ -39,7 +39,7 @@ const MainLayout = () => {
       <Navbar />
 
       {/* Primary Page Canvas */}
-      <main className="flex-grow">
+      <main className="flex-grow pt-[116px]">
         <Outlet />
       </main>
 
